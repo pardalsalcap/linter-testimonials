@@ -17,9 +17,8 @@ class LinterTestimonialsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('linter-testimonials')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_linter-testimonials_table')
+            ->hasTranslations()
+            ->hasMigration('create_linter_testimonials_table')
             ->hasCommand(LinterTestimonialsCommand::class);
     }
 }
