@@ -3,7 +3,6 @@
 namespace Pardalsalcap\LinterTestimonials\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-
 use Pardalsalcap\LinterTestimonials\Models\Testimoniable;
 use Pardalsalcap\LinterTestimonials\Models\Testimonial;
 

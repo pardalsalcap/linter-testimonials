@@ -2,7 +2,6 @@
 
 namespace Pardalsalcap\LinterTestimonials\Resources;
 
-use Pardalsalcap\LinterTestimonials\Models\Testimonial;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -15,6 +14,7 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Pardalsalcap\LinterTestimonials\Models\Testimonial;
 use Pardalsalcap\LinterTestimonials\Resources\TestimonialResource\Pages\CreateTestimonial;
 use Pardalsalcap\LinterTestimonials\Resources\TestimonialResource\Pages\EditTestimonial;
 use Pardalsalcap\LinterTestimonials\Resources\TestimonialResource\Pages\ListTestimonials;
@@ -24,6 +24,7 @@ class TestimonialResource extends Resource
     protected static ?string $model = Testimonial::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-bottom-center-text';
+
     protected static ?int $navigationSort = 600;
 
     public static function form(Form $form): Form

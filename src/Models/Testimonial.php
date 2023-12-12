@@ -2,9 +2,7 @@
 
 namespace Pardalsalcap\LinterTestimonials\Models;
 
-use App\Models\ContentTestimonial;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
@@ -19,7 +17,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property string $lang
  * @property string $created_at
  * @property string $updated_at
-  */
+ */
 class Testimonial extends Model
 {
     /**
