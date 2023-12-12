@@ -6,14 +6,39 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
-        Schema::create('linter_testimonials_table', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-
-            // add fields
-
+            $table->string('commenter_name');
+            $table->string('commenter_position');
+            $table->string('commenter_company');
+            $table->text('comment');
+            $table->integer('position')->default(0);
+            $table->boolean('status')->default(0);
+            $table->boolean('real')->default(1);
+            $table->string('lang', 2);
             $table->timestamps();
         });
+
+        Schema::create('testimoniables', function (Blueprint $table) {
+            $table->bigInteger('testimonial_id')->unsigned();
+            $table->bigInteger('testimoniable_id')->unsigned();
+            $table->string('testimoniable_type');
+            $table->string('testimonial_type')->nullable();
+            $table->foreign('testimonial_id')->references('id')->on('testimonials')->cascadeOnUpdate()->cascadeOnDelete();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('testimoniables');
+        Schema::dropIfExists('testimonials');
     }
 };
