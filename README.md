@@ -5,7 +5,8 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/pardalsalcap/linter-testimonials/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/pardalsalcap/linter-testimonials/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/pardalsalcap/linter-testimonials.svg?style=flat-square)](https://packagist.org/packages/pardalsalcap/linter-testimonials)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This package adds management for the testimonials modules of your website. It includes a trait to add to your models and a controller to manage the testimonials.
+It needs Filament to work, and includes resources and relation managers to use with it.
 
 ## Installation
 
@@ -22,49 +23,32 @@ php artisan vendor:publish --tag="linter-testimonials-migrations"
 php artisan migrate
 ```
 
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="linter-testimonials-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="linter-testimonials-views"
-```
 
 ## Usage
 
+To include use the resources you can create a resource that extends the package on and modify as needed:
+
 ```php
-$linterTestimonials = new Pardalsalcap\LinterTestimonials();
-echo $linterTestimonials->echoPhrase('Hello, Pardalsalcap!');
+<?php
+
+namespace App\Filament\Resources;
+class TestimonialResource extends \Pardalsalcap\LinterTestimonials\Resources\TestimonialResource
+{
+
+}
 ```
 
-## Testing
+You can add the trait to your model:
 
-```bash
-composer test
+```php
+use Pardalsalcap\LinterTestimonials\Traits\HasTestimonials;
 ```
+
+This will add a `testimonials` relation to your model. From there you can retrieve the testimonials details.
 
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
 
