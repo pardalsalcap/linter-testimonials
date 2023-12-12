@@ -2,9 +2,9 @@
 
 namespace Pardalsalcap\LinterTestimonials;
 
+use Pardalsalcap\LinterTestimonials\Commands\LinterTestimonialsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Pardalsalcap\LinterTestimonials\Commands\LinterTestimonialsCommand;
 
 class LinterTestimonialsServiceProvider extends PackageServiceProvider
 {
