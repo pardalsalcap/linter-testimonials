@@ -2,7 +2,6 @@
 
 namespace Pardalsalcap\LinterTestimonials\Models;
 
-
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -12,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $testimonial_type
  * @property Testimonial $testimonial
  */
-
 class Testimoniable extends Model
 {
     /**
