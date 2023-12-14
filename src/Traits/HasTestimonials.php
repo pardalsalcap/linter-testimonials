@@ -13,7 +13,7 @@ trait HasTestimonials
         return $this->morphToMany(Testimonial::class, 'testimoniable')->withPivot(['testimonial_type']);
     }
 
-    public function attachAddress(Testimonial $testimonial)
+    public function attachTestimonial(Testimonial $testimonial)
     {
         $testimoniable = Testimoniable::where('testimoniable_id', $this->id)
             ->where('testimoniable_type', self::class)
@@ -26,7 +26,7 @@ trait HasTestimonials
         return $testimoniable->save();
     }
 
-    public function detachAddress(Testimonial $testimonial)
+    public function detachTestimonial(Testimonial $testimonial)
     {
         return Testimoniable::where('testimonial_id', $testimonial->id)
             ->where('testimoniable_id', $this->id)
@@ -34,7 +34,7 @@ trait HasTestimonials
             ->delete();
     }
 
-    public function syncAddresses(...$testimonials)
+    public function syncTestimonials(...$testimonials)
     {
         $testimonials = collect($testimonials);
         $testimonials_ids = $testimonials->pluck('id')->all();
