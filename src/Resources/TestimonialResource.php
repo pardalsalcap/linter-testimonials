@@ -104,7 +104,7 @@ class TestimonialResource extends Resource
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    //Tables\Actions\DeleteBulkAction::make(),
+                    // Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
