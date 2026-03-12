@@ -8,8 +8,8 @@
 This package adds management for the testimonials modules of your website. It includes a trait to add to your models and a controller to manage the testimonials.
 It needs Filament to work, and includes resources and relation managers to use with it.
 
-v3.0.0 Has support for Filament 3
-v5.0.0 Has support for Filament 5
+`v3.0.0` supports Filament 3.
+`v5.0.0` supports Filament 5.
 
 ## Installation
 
