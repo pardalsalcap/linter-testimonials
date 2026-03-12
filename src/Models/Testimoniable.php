@@ -3,6 +3,7 @@
 namespace Pardalsalcap\LinterTestimonials\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property int $testimonial_id
@@ -32,7 +33,7 @@ class Testimoniable extends Model
      */
     protected $fillable = ['testimonial_id', 'testimoniable_id', 'testimoniable_type', 'testimonial_type'];
 
-    public function testimonial(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function testimonial(): BelongsTo
     {
         return $this->belongsTo(Testimonial::class);
     }

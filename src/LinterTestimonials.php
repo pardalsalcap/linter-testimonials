@@ -2,6 +2,4 @@
 
 namespace Pardalsalcap\LinterTestimonials;
 
-class LinterTestimonials
-{
-}
+class LinterTestimonials {}
